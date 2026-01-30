@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="services-split">
+
+    <!-- LEFT SIDE — IMAGE SLIDER -->
+    <div class="services-left">
+      <div class="bg-slide active"></div>
+      <div class="bg-slide"></div>
+      <div class="bg-slide"></div>
+    </div>
+
+    <!-- RIGHT SIDE — CONTENT -->
+    <div class="services-right">
+
+      <div class="services-content reveal">
+        <h2>Our Services</h2>
+
+        <ul class="service-list">
+          <li><strong>Supply and Erection of Lighting Systems</strong></li>
+          <li>High Mast (Tower) Lighting Installation</li>
+          <li>Bay / Buzzard Light Installation</li>
+          <li>Highway Lighting Solutions</li>
+          <li>Street Lighting Systems</li>
+          <li>Supply and Laying of Cables</li>
+          <li>Electrical Fittings & Accessories</li>
+          <li>Lighting for Sports Stadiums & Large Venues</li>
+          <li>Operation & Maintenance Services</li>
+        </ul>
+
+        <h3>Other Major Projects</h3>
+        <ul class="service-list">
+          <li>L&W – Pune</li>
+          <li>Embassy Site – Pallavaram</li>
+          <li>Casagrand Projects</li>
+          <li>L&W – Mumbai</li>
+        </ul>
+      </div>
+
+      <!-- CLIENTS -->
+      <section id="clients" class="clients reveal">
+        <h2>Our Esteemed Clients</h2>
+        <p>We are proud to have delivered lighting solutions for leading organizations and prestigious venues.</p>
+
+        <ul class="client-logos">
+          <li><img src="/assets/images/chepauk-logo.png" alt="Chepauk Stadium"></li>
+          <li><img src="/assets/images/vca-logo.png" alt="VCA Nagpur"></li>
+          <li><img src="/assets/images/kalinga-logo.png" alt="Kalinga Stadium"></li>
+          <li><img src="/assets/images/tnpl-logo.png" alt="TNPL"></li>
+          <li><img src="/assets/images/casagrand-logo.png" alt="Casagrand"></li>
+        </ul>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- IMAGE SLIDER SCRIPT -->
+  <script>
+    const slides = document.querySelectorAll(".bg-slide");
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 4000);
+  </script>
+</Layout>
+
+<style>
+/* ===== SPLIT LAYOUT ===== */
+.services-split {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* LEFT SIDE SLIDER */
+.services-left {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+  filter: brightness(0.5);
+  transform: scale(1);
+}
+
+.bg-slide.active {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* CHANGE IMAGES HERE */
+.bg-slide:nth-child(1) { background-image: url("/assets/images/mainBG.webp"); }
+.bg-slide:nth-child(2) { background-image: url("/assets/images/mainBG5.jpg"); }
+.bg-slide:nth-child(3) { background-image: url("/assets/images/mainBG-day.png"); }
+
+/* RIGHT SIDE CONTENT */
+.services-right {
+  flex: 1;
+  background: #0f172a;
+  color: white;
+  padding: 120px 60px 80px;
+  overflow-y: auto;
+}
+
+.services-content h2,
+.clients h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.services-content h3 {
+  margin-top: 40px;
+  font-size: 24px;
+}
+
+/* SERVICE LIST */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.service-list li {
+  background: rgba(255,255,255,0.06);
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.service-list li:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateX(6px);
+}
+
+/* CLIENTS */
+.clients {
+  margin-top: 60px;
+}
+
+.clients p {
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.client-logos img {
+  max-width: 140px;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.client-logos img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .services-split {
+    flex-direction: column;
+  }
+
+  .services-left {
+    height: 300px;
+  }
+
+  .services-right {
+    padding: 60px 25px;
+  }
+}
+</style>

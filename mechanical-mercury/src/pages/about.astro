@@ -1,0 +1,171 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="about-split">
+
+    <!-- LEFT SIDE IMAGE SLIDER -->
+    <div class="about-slider">
+      <div class="slides">
+        <div class="slide" style="background-image:url('/assets/images/abt1.jpg')"></div>
+        <div class="slide" style="background-image:url('/assets/images/abt2.jpg')"></div>
+        <div class="slide" style="background-image:url('/assets/images/abt3.jpg')"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE CONTENT -->
+    <div class="about-content">
+      <h2>About Us</h2>
+
+      <p>
+        We are an experienced lighting solutions company offering end-to-end
+        services in the supply and erection of high-mast towers, lighting systems,
+        cables, and electrical fittings.
+      </p>
+
+      <p>
+        Our strength lies in precision execution, skilled manpower, and timely
+        project delivery across India.
+      </p>
+
+      <h3>Major Stadium Projects</h3>
+      <ul>
+        <li>MA Chidambaram Stadium – Chennai</li>
+        <li>VCA Stadium – Nagpur</li>
+        <li>Kalinga Stadium – Bhubaneswar, Odisha</li>
+        <li>Tata Archery Academy – Jamshedpur</li>
+        <li>Tata Stadium – Ranchi</li>
+        <li>Indian Cement Company Ground – Tirunelveli</li>
+        <li>CSK Ground – Navalur</li>
+      </ul>
+
+      
+      <h3>Cricket Stadium & Ground Projects</h3>
+      <p>We have successfully completed lighting supply and erection works for TNPL cricket stadiums.</p>
+      <ul>
+        <li>NPR College Ground – Dindigul</li>
+        <li>ICL Sankar Nagar Ground – Tirunelveli</li>
+        <li>Salem Cricket Foundation Ground – Salem</li>
+        <li>SNR College Cricket Ground</li>
+      </ul>
+    </div>
+
+
+  </section>
+</Layout>
+
+<style>
+/* =========================
+   SPLIT LAYOUT
+========================= */
+.about-split {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+   LEFT SIDE SLIDER
+========================= */
+.about-slider {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slideMove 15s ease-in-out 0s 3 forwards;
+}
+
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Slider Animation */
+@keyframes slideMove {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Dark overlay */
+.about-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* =========================
+   RIGHT SIDE CONTENT
+========================= */
+.about-content {
+  flex: 1;
+  padding: 100px 60px;
+  background: #0f172a;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.about-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.about-content h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.about-content p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  opacity: 0.95;
+}
+
+.about-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-content li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .about-split {
+    flex-direction: column;
+  }
+
+  .about-slider {
+    height: 300px;
+  }
+
+  .slide {
+    height: 300px;
+  }
+
+  .about-content {
+    padding: 50px 20px;
+  }
+}
+</style>
