@@ -1,13 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "src/**/*"
-  ],
+  "include": [".astro/types.d.ts", "src/**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
+    "jsxImportSource": "react",
+    "allowJs": true,
     "types": ["astro/client"]
   }
 }
