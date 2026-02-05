@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Us | Macro Elmech Technologies">
+
+  <section class="relative flex flex-col lg:flex-row bg-gradient-to-br from-black via-slate-900 to-black overflow-hidden">
+
+    <!-- 🌌 GLOBAL GLOW BACKGROUND -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-700/30 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- LEFT SIDE IMAGE SLIDER -->
+    <div class="relative lg:w-1/2 w-full h-[300px] lg:h-auto overflow-hidden">
+
+      <div class="absolute inset-0 flex w-[300%] min-h-full animate-slide">
+        <div class="w-full min-h-full bg-cover bg-center" style="background-image:url('/assets/images/abt1.jpg')"></div>
+        <div class="w-full min-h-full bg-cover bg-center" style="background-image:url('/assets/images/abt2.jpg')"></div>
+        <div class="w-full min-h-full bg-cover bg-center" style="background-image:url('/assets/images/abt3.jpg')"></div>
+        
+      </div>
+
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+
+    <!-- RIGHT SIDE CONTENT -->
+    <div class="lg:w-1/2 w-full text-white px-6 md:px-12 lg:px-16 py-16 overflow-y-auto">
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        About Us
+      </h2>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        We are an experienced lighting solutions company offering end-to-end
+        services in the supply and erection of high-mast towers, lighting systems,
+        cables, and electrical fittings.
+      </p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">
+        Our strength lies in precision execution, skilled manpower, and timely
+        project delivery across India.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3 text-purple-300">Major Stadium Projects</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li class="border-b border-white/10 pb-2">MA Chidambaram Stadium – Chennai</li>
+        <li class="border-b border-white/10 pb-2">VCA Stadium – Nagpur</li>
+        <li class="border-b border-white/10 pb-2">Kalinga Stadium – Bhubaneswar, Odisha</li>
+        <li class="border-b border-white/10 pb-2">Tata Archery Academy – Jamshedpur</li>
+        <li class="border-b border-white/10 pb-2">Tata Stadium – Ranchi</li>
+        <li class="border-b border-white/10 pb-2">Indian Cement Company Ground – Tirunelveli</li>
+        <li class="border-b border-white/10 pb-2">CSK Ground – Navalur</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-10 mb-3 text-pink-300">Cricket Stadium & Ground Projects</h3>
+      <p class="text-gray-400 mb-4">
+        We have successfully completed lighting supply and erection works for TNPL cricket stadiums.
+      </p>
+
+      <ul class="space-y-2 text-gray-300">
+        <li class="border-b border-white/10 pb-2">NPR College Ground – Dindigul</li>
+        <li class="border-b border-white/10 pb-2">ICL Sankar Nagar Ground – Tirunelveli</li>
+        <li class="border-b border-white/10 pb-2">Salem Cricket Foundation Ground – Salem</li>
+        <li class="border-b border-white/10 pb-2">SNR College Cricket Ground</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- SLIDER ANIMATION -->
+  <style is:global>
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-slide {
+      animation: slide 15s infinite;
+    }
+  </style>
+
+</Layout>
