@@ -9,4 +9,5 @@ base: '/mechanical-mercury/',
   devToolbar: { enabled: false },
   vite: { plugins: [tailwindcss()] },
   integrations: [react()],
+    output: 'static'
 });
