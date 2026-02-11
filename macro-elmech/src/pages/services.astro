@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Services | Macro Elmech Technologies">
+
+  <section class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+
+    <!-- Background Glow Effects (Same as Contact) -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-700/30 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT SIDE — IMAGE SLIDER -->
+<div class="relative w-full h-[60vh] md:h-[80vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+
+        <div class="bg-slide active"></div>
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+      </div>
+
+      <!-- RIGHT SIDE — CONTENT -->
+      <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-2xl text-white">
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          Our Services
+        </h2>
+
+        <ul class="space-y-3 mb-8">
+          <li class="service-item"><strong>Supply and Erection of Lighting Systems</strong></li>
+          <li class="service-item">High Mast (Tower) Lighting Installation</li>
+          <li class="service-item">Bay / Buzzard Light Installation</li>
+          <li class="service-item">Highway Lighting Solutions</li>
+          <li class="service-item">Street Lighting Systems</li>
+          <li class="service-item">Supply and Laying of Cables</li>
+          <li class="service-item">Electrical Fittings & Accessories</li>
+          <li class="service-item">Lighting for Sports Stadiums & Large Venues</li>
+          <li class="service-item">Operation & Maintenance Services</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mb-4 text-purple-300">Other Major Projects</h3>
+        <ul class="space-y-3">
+          <li class="service-item">L&W – Pune</li>
+          <li class="service-item">Embassy Site – Pallavaram</li>
+          <li class="service-item">Casagrand Projects</li>
+          <li class="service-item">L&W – Mumbai</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+<!-- CLIENTS SECTION -->
+<section class="relative py-24 px-6 text-white overflow-hidden">
+
+  <!-- Same Glow Background -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-700/30 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      Our Esteemed Clients
+    </h2>
+
+    <p class="text-white/70 max-w-2xl mx-auto mb-14">
+      We are proud to have delivered lighting solutions for leading organizations and prestigious venues.
+    </p>
+
+    <!-- Logos Grid -->
+    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 items-center justify-items-center">
+
+      <li class="client-logo">
+        <img src="/assets/images/chepauk-logo.png" alt="Chepauk Stadium" />
+      </li>
+
+      <li class="client-logo">
+        <img src="/assets/images/vca-logo.png" alt="VCA Nagpur" />
+      </li>
+
+      <li class="client-logo">
+        <img src="/assets/images/kalinga-logo.png" alt="Kalinga Stadium" />
+      </li>
+
+      <li class="client-logo">
+        <img src="/assets/images/tnpl-logo.png" alt="TNPL" />
+      </li>
+
+      <li class="client-logo">
+        <img src="/assets/images/casagrand-logo.png" alt="Casagrand" />
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+
+  <!-- SLIDER SCRIPT -->
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".bg-slide");
+      let current = 0;
+
+      setInterval(() => {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }, 5000);
+    });
+  </script>
+</Layout>
+
+<style is:global>
+    @reference  "../styles/global.css";
+.bg-slide {
+  @apply absolute inset-0 bg-cover bg-center opacity-0 transition-all duration-[1500ms] ease-in-out;
+  filter: brightness(0.6);
+  transform: scale(1);
+}
+.bg-slide.active {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.bg-slide:nth-child(1) { background-image: url("/assets/images/mainBG.webp"); }
+.bg-slide:nth-child(2) { background-image: url("/assets/images/mainBG5.jpg"); }
+.bg-slide:nth-child(3) { background-image: url("/assets/images/mainBG-day.png"); }
+
+.service-item {
+  @apply bg-white/10 hover:bg-gradient-to-r hover:from-purple-600/40 hover:to-pink-600/40 
+         transition duration-300 px-4 py-3 rounded-lg hover:translate-x-1 border border-white/10;
+}
+.client-logo {
+  @apply bg-white/5 border border-white/10 backdrop-blur-md 
+         p-6 rounded-xl flex items-center justify-center 
+         transition duration-300 hover:scale-105 hover:bg-white/10;
+}
+
+.client-logo img {
+  @apply max-h-14 object-contain opacity-80 transition duration-300;
+}
+
+.client-logo:hover img {
+  @apply opacity-100;
+}
+
+</style>

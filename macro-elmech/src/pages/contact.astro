@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact | Macro Elmech Technologies">
+
+  <section class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+
+    <!-- Background Glow Effects -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-700/30 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT SIDE INFO -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          Let’s Get In Touch
+        </h1>
+
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          Have a project in mind? Need lighting solutions for stadiums,
+          highways, or industrial areas? Our team is ready to help you with
+          reliable and professional service.
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- Phone -->
+          <div class="flex items-center gap-4 group">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-lg group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-1.5 1.5a11.05 11.05 0 005 5L13 17l7 3v2a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Call Us</p>
+              <p class="text-lg font-semibold text-white">+91 8526252717</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center gap-4 group">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-lg group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-4 4m4-4l-4-4m-4 8h8a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Email Us</p>
+              <p class="text-lg font-semibold text-white">macroelmechtech@gmail.com</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE CONTACT FORM -->
+      <!-- <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-2xl">
+
+        <h2 class="text-2xl font-semibold mb-6 text-white">Send a Message</h2>
+
+        <form class="space-y-5">
+
+          <div>
+            <label class="block text-sm mb-2 text-gray-300">Full Name</label>
+            <input type="text" placeholder="Enter your name"
+              class="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none text-white"/>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2 text-gray-300">Email Address</label>
+            <input type="email" placeholder="Enter your email"
+              class="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 focus:border-pink-500 focus:ring-2 focus:ring-pink-500 outline-none text-white"/>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2 text-gray-300">Message</label>
+            <textarea rows="4" placeholder="Write your message..."
+              class="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 outline-none text-white"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 transition">
+            Send Message
+          </button>
+
+        </form>
+      </div> -->
+
+    </div>
+  </section>
+
+</Layout>
